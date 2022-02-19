@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import twitter from '../assets/twitter.png'
+import github from '../assets/github.png'
 import CardMedia from '@mui/material/CardMedia'
 
 const theme = createTheme();
@@ -42,14 +42,14 @@ export default function ConnectGithub() {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-                <Grid item xs> <img src={twitter} height="140"/> </Grid>
+                <Grid item xs> <img src={github} height="140"/> </Grid>
             </Grid>
 
             <Grid container spacing={2}>
 
                 <Grid item>
                     <Button variant="outlined">
-                      Connect Twitter
+                      Connect Github
                     </Button>
 
                 </Grid>

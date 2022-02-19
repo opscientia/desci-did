@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import twitter from '../assets/twitter.png'
+import orcid from '../assets/orcid.png'
 import CardMedia from '@mui/material/CardMedia'
 
 const theme = createTheme();
@@ -42,14 +42,14 @@ export default function ConnectORCID() {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-                <Grid item xs> <img src={twitter} height="140"/> </Grid>
+                <Grid item xs> <img src={orcid} height="140"/> </Grid>
             </Grid>
 
             <Grid container spacing={2}>
 
                 <Grid item>
                     <Button variant="outlined">
-                      Connect Twitter
+                      Connect ORCID
                     </Button>
 
                 </Grid>
