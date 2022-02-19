@@ -1,7 +1,71 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import twitter from '../assets/twitter.png'
+import CardMedia from '@mui/material/CardMedia'
+
+const theme = createTheme();
+
 export default function ConnectTwitter() {
+  const handleSubmit = (event) => {
+    // event.preventDefault();
+    // const data = new FormData(event.currentTarget);
+    // // eslint-disable-next-line no-console
+    // console.log({
+    //   email: data.get('email'),
+    //   password: data.get('password'),
+    // });
+  };
+
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Twitter</h2>
-    </main>
+      <>
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <Box
+            sx={{
+              marginTop: 8,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Grid containersx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+                <Grid item xs> <img src={twitter} height="140"/> </Grid>
+            </Grid>
+
+            <Grid container spacing={2}>
+
+                <Grid item>
+                    <Button variant="outlined">
+                      Connect Twitter
+                    </Button>
+
+                </Grid>
+
+                <Grid item>
+                    <Button variant="outlined">
+                      SKIP
+                    </Button>
+                </Grid>
+            </Grid>
+
+
+          </Box>
+        </Container>
+      </ThemeProvider>
+
+      </>
   );
 }

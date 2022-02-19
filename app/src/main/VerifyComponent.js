@@ -14,7 +14,7 @@ import CardMedia from '@mui/material/CardMedia'
 
 const theme = createTheme();
 
-export default function ConnectGithub() {
+export default function VerifyComponent() {
   const handleSubmit = (event) => {
     // event.preventDefault();
     // const data = new FormData(event.currentTarget);
