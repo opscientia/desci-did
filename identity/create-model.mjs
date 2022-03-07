@@ -6,6 +6,8 @@ import { Ed25519Provider } from 'key-did-provider-ed25519'
 import { getResolver } from 'key-did-resolver'
 import { fromString } from 'uint8arrays'
 
+import * as scientistSchema from './schema.json'
+
 // set DID_KEY environment variable before running this line
 // to do this, run 'glaze did:create' anc copy the result into DID_KEY
 const key = fromString(process.env.DID_KEY, 'base16')
@@ -24,34 +26,23 @@ ceramic.did = did
 const manager = new ModelManager(ceramic)
 
 // Step 1: create a JSON schema
-const noteSchemaID = await manager.createSchema('SimpleNote', {
-  $schema: 'http://json-schema.org/draft-07/schema#',
-  title: 'SimpleNote',
-  type: 'object',
-  properties: {
-    text: {
-      type: 'string',
-      title: 'text',
-      maxLength: 4000,
-    },
-  },
-})
+const schemaID = await manager.createSchema('ScientistID', scientistSchema)
 
-console.log(noteSchemaID)
+console.log(schemaID)
 
 //Step 2: create a definition using the SchemaID
 // Create the definition using the created schema ID
-await manager.createDefinition('myNote', {
-  name: 'My note',
-  description: 'A simple text note',
-  schema: manager.getSchemaURL(noteSchemaID),
+await manager.createDefinition('MyID', {
+  name: 'My ID',
+  description: 'Simple Scientist ID document',
+  schema: manager.getSchemaURL(schemaID),
 })
 
 //Step 3: create an exampleNote tile using definition
 // Create a tile using the created schema ID
-await manager.createTile('exampleNote',
-  { text: 'A simple note' },
-  { schema: manager.getSchemaURL(noteSchemaID) },
+await manager.createTile('exampleID',
+  { text: 'Vitalik Buterin' },
+  { schema: manager.getSchemaURL(schemaID) },
 )
 
 //Step 4: publish model to ceramic node, and write model details for later use

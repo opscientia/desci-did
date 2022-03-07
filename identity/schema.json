@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScientistID",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "title": "name",
+      "maxLength": 4000
+    }
+  }
+}
