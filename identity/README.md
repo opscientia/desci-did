@@ -26,3 +26,17 @@ The actual schema that we'll [deploy](https://developers.ceramic.network/tools/g
         }
     }
 ```
+
+# Walkthrough
+> Following this: https://developers.ceramic.network/tools/glaze/example/
+
+First off, install packages
+'''
+npm install @ceramicnetwork/http-client @glazed/datamodel @glazed/did-datastore dids key-did-provider-ed25519 key-did-resolver uint8arrays
+npm install --dev @glazed/devtools
+'''
+
+Then run `create-model.mjs`
+```
+node create-model.mjs
+```
