@@ -22,6 +22,9 @@ await did.authenticate()
 const ceramic = new CeramicClient('http://localhost:7007')
 ceramic.did = did
 
+////////////////////////
+//Setup steps same till here in run.mjs as well
+
 // Create a manager for the model
 const manager = new ModelManager(ceramic)
 

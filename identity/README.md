@@ -22,7 +22,7 @@ The actual schema that we'll [deploy](https://developers.ceramic.network/tools/g
         "title":"DeSci DID alpha-0.1",
         "type":"object",
         "properties":{
-
+            // Important stuff here
         }
     }
 ```
@@ -38,5 +38,9 @@ npm install --dev @glazed/devtools
 
 Then run `create-model.mjs`
 ```
-node create-model.mjs
+node --experimental-json-modules create-model.mjs
 ```
+
+# Documentation
+- `create-model.mjs` - imports JSON schema from `schema.json` and deploys schema as a ceramic document, getting back relevant schemaID in `model.json`
+- `run.mjs` - executed after create-model.mjs, this interacts with the previously deployed schema - fetches previously written DID document, and writes a new one
